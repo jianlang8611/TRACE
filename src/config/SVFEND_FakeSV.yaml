@@ -1,0 +1,32 @@
+hydra:
+  output_subdir: null
+  run:  
+    dir: .
+data:
+  task: binary
+para:
+  loss_type: l2_orth
+  alpha: 0
+  ori: false
+  dropout: 0.1
+  asr_alpha: 0.01
+  iepa_alpha: 1
+  cfus_alpha: 0.1
+  diric_alpha: 0.5
+  rho: 0.9
+opt:
+  name: Adam
+  lr: 0.001
+  weight_decay: 5.0e-05
+sche:
+  name: SVFENDLR
+num_epoch: 5
+batch_size: 128
+seed: 2024
+model: SVFEND
+dataset: FakeSV
+type: 5-fold
+patience: 5
+name: SVFEND
+freeze_gate:
+tex: false
